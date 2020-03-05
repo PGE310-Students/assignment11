@@ -44,11 +44,11 @@ class TestSolution(unittest.TestCase):
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
 
-            p = WellPlot('xom_wells_in_tx.csv')
+            p = WellPlot('eog_wells_in_tx.csv')
             p.save_plot()
 
-            gold_image = cv2.imread('images/xom_wells_in_tx_gold.png')
-            test_image = cv2.imread('xom_wells_in_tx.png')
+            gold_image = cv2.imread('images/eog_wells_in_tx_gold.png')
+            test_image = cv2.imread('eog_wells_in_tx.png')
 
             test_image_resized = skimage.transform.resize(test_image, 
                                                           (gold_image.shape[0], gold_image.shape[1]), 
