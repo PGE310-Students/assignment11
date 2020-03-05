@@ -16,7 +16,7 @@ install:
   - conda activate $ASSIGNMENT
   - "curl -H \"Authorization: token ${GH_TOKEN}\" -H 'Accept: application/vnd.github.v3.raw' -O --location \"https://api.github.com/repos/PGE310/${ASSIGNMENT}/contents/test.py\""
   - "curl -H \"Authorization: token ${GH_TOKEN}\" -H 'Accept: application/vnd.github.v3.raw' -O --location \"https://api.github.com/repos/PGE310/${ASSIGNMENT}/contents/images/eog_wells_in_nd_gold.png\""
-  - "curl -H \"Authorization: token ${GH_TOKEN}\" -H 'Accept: application/vnd.github.v3.raw' -O --location \"https://api.github.com/repos/PGE310/${ASSIGNMENT}/contents/xom_wells_in_tx.csv\""
-  - "(cd images && curl -H \"Authorization: token ${GH_TOKEN}\" -H 'Accept: application/vnd.github.v3.raw' -O --location \"https://api.github.com/repos/PGE310/${ASSIGNMENT}/contents/images/xom_wells_in_tx_gold.png\")"
+  - "curl -H \"Authorization: token ${GH_TOKEN}\" -H 'Accept: application/vnd.github.v3.raw' -O --location \"https://api.github.com/repos/PGE310/${ASSIGNMENT}/contents/eog_wells_in_tx.csv\""
+  - "(cd images && curl -H \"Authorization: token ${GH_TOKEN}\" -H 'Accept: application/vnd.github.v3.raw' -O --location \"https://api.github.com/repos/PGE310/${ASSIGNMENT}/contents/images/eog_wells_in_tx_gold.png\")"
 script:
   - python -m unittest test.py -vvv
