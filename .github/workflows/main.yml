@@ -18,4 +18,4 @@ jobs:
           -O --location "https://api.github.com/repos/PGE310/${ASSIGNMENT}/contents/test.py"
       - name: Run Tests 
         shell: bash -l {0}
-        run: python test.py
+        run: python -m unittest discover -s .
