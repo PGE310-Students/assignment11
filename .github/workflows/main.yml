@@ -15,7 +15,10 @@ jobs:
           curl \
           --header 'Authorization: token ${{secrets.PGE310_SECRET_TOKEN}}' \
           --header 'Accept: application/vnd.github.v3.raw' \
-          -O --location "https://api.github.com/repos/PGE310/${ASSIGNMENT}/contents/test.py"
+          -O --location "https://api.github.com/repos/PGE310/${ASSIGNMENT}/contents/test.py" \
+          -O --location "https://api.github.com/repos/PGE310/${ASSIGNMENT}/contents/images/eog_wells_in_nd_gold.png" \
+          -O --location "https://api.github.com/repos/PGE310/${ASSIGNMENT}/contents/images/eog_wells_in_tx_gold.png" \
+          -O --location "https://api.github.com/repos/PGE310/${ASSIGNMENT}/contents/eog_wells_in_tx.csv"
       - name: Run Tests 
         shell: bash -l {0}
-        run: python -m unittest discover -s .
+        run: python -m unittest test.py
