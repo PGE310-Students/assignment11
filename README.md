@@ -1,7 +1,5 @@
 # Homework Assignment 11
 
-![Assignment 11](https://github.com/PGE310/assignment11/workflows/.github/workflows/main.yml/badge.svg)
-
 Open the [Assignment 11 Jupyter Notebook](assignment11.ipynb) and follow the instructions.
 
 ## Testing
