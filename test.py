@@ -52,24 +52,6 @@ class TestSolution(unittest.TestCase):
                                                 test_image_resized, multichannel=True)
             assert ssim >= 0.75
 
-    def test_plot_private(self):
-        with warnings.catch_warnings():
-            warnings.simplefilter("ignore")
-
-            p = WellPlot('eog_wells_in_tx.csv')
-            p.save_plot()
-
-            gold_image = cv2.imread('images/eog_wells_in_tx_gold.png')
-            test_image = cv2.imread('eog_wells_in_tx.png')
-
-            test_image_resized = skimage.transform.resize(test_image, 
-                                                          (gold_image.shape[0], gold_image.shape[1]), 
-                                                          mode='constant')
-
-            ssim = skimage.measure.compare_ssim(skimage.img_as_float(gold_image), 
-                                                test_image_resized, multichannel=True)
-            assert ssim >= 0.75
-
 
 if __name__ == '__main__':
     unittest.main()
